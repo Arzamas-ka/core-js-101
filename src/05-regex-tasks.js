@@ -86,5 +86,5 @@ function getPasswordValidator(/* minLength */) {
 module.exports = {
   getRegexForGuid,
   getRegexForPitSpot,
-  getPasswordValidator,
+  getPasswordValidator
 };

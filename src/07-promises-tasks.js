@@ -100,5 +100,5 @@ module.exports = {
   willYouMarryMe,
   processAllPromises,
   getFastestPromise,
-  chainPromises,
+  chainPromises
 };

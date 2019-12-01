@@ -137,7 +137,7 @@ const cssSelectorBuilder = {
 
   combine(/* selector1, combinator, selector2 */) {
     throw new Error('Not implemented');
-  },
+  }
 };
 
 
@@ -145,5 +145,5 @@ module.exports = {
   Rectangle,
   getJSON,
   fromJSON,
-  cssSelectorBuilder,
+  cssSelectorBuilder
 };
