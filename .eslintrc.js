@@ -18,5 +18,6 @@ module.exports = {
   rules: {
     "linebreak-style": 0,
     "comma-dangle": ["error", "never"],
+    "arrow-parens": ["error", "as-needed"],
   },
 };
