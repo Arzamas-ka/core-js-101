@@ -86,9 +86,7 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
-}
+const getLinearEquationRoot = (a, b) => (0 - b) / a;
 
 
 /**
@@ -180,9 +178,7 @@ function getParallelipidedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
-}
+const roundToPowerOfTen = (num, pow) => 10 ** pow * Math.round(num / 10 ** pow);
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -201,8 +197,11 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) return false;
+  }
+  return n > 1;
 }
 
 /**
@@ -220,9 +219,7 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
-}
+const toNumber = (value, def) => (Number(value) ? Number(value) : def);
 
 module.exports = {
   getRectangleArea,

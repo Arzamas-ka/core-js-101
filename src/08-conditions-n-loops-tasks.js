@@ -280,7 +280,9 @@ function isCreditCardNumber(ccn) {
     .reverse()
     .map((elem, index) => {
       if (index % 2 === 1) {
-        result = elem * 2 < 10 ? elem * 2 : (elem * 2 - ((elem * 2) % 10)) / 10 + ((elem * 2) % 10);
+        result = elem * 2 < 10
+          ? elem * 2
+          : (elem * 2 - ((elem * 2) % 10)) / 10 + ((elem * 2) % 10);
       } else {
         result = +elem;
       }
@@ -306,7 +308,10 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-  const result = String(num).split('').map(elem => +elem).reduce((acc, val) => acc + val);
+  const result = String(num)
+    .split('')
+    .map(elem => +elem)
+    .reduce((acc, val) => acc + val);
   return result > 9 ? getDigitalRoot(result) : result;
 }
 
@@ -486,8 +491,80 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(position) {
+  // const normalizeArray = position.map(arr => {
+  //   const newArr = Array(3).fill(undefined);
+
+  //   arr.forEach((_, ind) => {
+  //     if (arr[ind]) {
+  //       newArr[ind] = arr[ind];
+  //     }
+  //   });
+
+  //   return newArr;
+  // });
+
+  // const flat = normalizeArray.flat();
+  // const winCombinations = [
+  //   [0, 1, 2],
+  //   [0, 3, 6],
+  //   [1, 4, 7],
+  //   [2, 5, 8],
+  //   [3, 4, 5],
+  //   [6, 7, 8],
+  //   [0, 4, 8],
+  //   [2, 4, 6]
+  // ];
+  // const winSymbols = ['X', '0'];
+
+  // for (let k = 0; k < winSymbols.length; k += 1) {
+  //   const winSymbol = winSymbols[k];
+  //   for (let i = 0; i < winCombinations.length; i += 1) {
+  //     if (
+  //       flat[winCombinations[i][0]] === winSymbol
+  //       && flat[winCombinations[i][1]] === winSymbol
+  //       && flat[winCombinations[i][2]] === winSymbol
+  //     ) {
+  //       return winSymbol;
+  //     }
+
+  let result;
+  if (
+    ((position[0][0] === position[1][1]
+      && position[0][0] === position[2][2])
+      || (position[0][2] === position[1][1]
+      && position[0][2] === position[2][0]))
+      && position[1][1] !== undefined
+  ) {
+    [, [, result]] = position;
+  } else if (
+    ((position[0][0] === position[0][1]
+      && position[0][0] === position[0][2])
+      || (position[0][0] === position[1][0]
+      && position[0][0] === position[2][0]))
+      && position[0][0] !== undefined
+  ) {
+    [[result]] = position;
+  } else if (
+    ((position[2][0] === position[2][1]
+      && position[2][0] === position[2][2])
+      || (position[0][2] === position[1][2]
+      && position[0][2] === position[2][2]))
+      && position[2][2] !== undefined
+  ) {
+    [, , [, , result]] = position;
+  } else if (
+    ((position[1][0] === position[1][1]
+        && position[1][0] === position[1][2])
+        || (position[0][1] === position[1][1]
+        && position[0][1] === position[2][1]))
+        && position[1][1]
+  ) {
+    [, [, result]] = position;
+  }
+  return result;
+
+  // return undefined;
 }
 
 module.exports = {
