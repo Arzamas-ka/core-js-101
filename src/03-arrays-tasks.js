@@ -256,7 +256,8 @@ function toArrayOfSquares(arr) {
 function getMovingSum(arr) {
   let prev = 0;
   return arr.map(value => {
-    prev += value; return prev;
+    prev += value;
+    return prev;
   });
 }
 
@@ -512,7 +513,9 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  return Array(end - start + 1).fill(start).map((elem, index) => elem + index);
+  return Array(end - start + 1)
+    .fill(start)
+    .map((elem, index) => elem + index);
 }
 
 /**
@@ -591,7 +594,9 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-  return arr.flatMap(childrenSelector);
+  const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), []);
+
+  return flatMap(childrenSelector, arr);
 }
 
 /**
