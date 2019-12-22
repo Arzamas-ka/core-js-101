@@ -486,8 +486,16 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  if (n === 1) {
+    return [[1]];
+  }
+
+  return new Array(n).fill(Array(n).fill(0)).map((arr, index) => {
+    const newArr = [...arr];
+    newArr[index] = 1;
+    return newArr;
+  });
 }
 
 /**
@@ -552,8 +560,21 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  const map = new Map();
+  return array.reduce((_, next) => {
+    const country = keySelector(next);
+    const city = valueSelector(next);
+
+    if (map.get(country)) {
+      map.get(country).push(city);
+    } else {
+      const newCities = [city];
+      map.set(country, newCities);
+    }
+
+    return map;
+  }, map);
 }
 
 /**
