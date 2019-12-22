@@ -42,7 +42,7 @@ function generateOdds(len) {
       counter += 1;
       return counter;
     })
-    .filter(num => num % 2 !== 0);
+    .filter((num) => num % 2 !== 0);
 
   // return Array.from(Array(len * 2))
   //   .map(() => {
@@ -93,7 +93,7 @@ function getArrayOfPositives(arr) {
   //   return acc;
   // }, []);
 
-  return arr.filter(num => num > 0);
+  return arr.filter((num) => num > 0);
 }
 
 /**
@@ -108,7 +108,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
-  return arr.filter(elem => typeof elem === 'string');
+  return arr.filter((elem) => typeof elem === 'string');
 }
 
 /**
@@ -125,7 +125,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  return arr.filter(elem => elem);
+  return arr.filter((elem) => elem);
 }
 
 /**
@@ -140,7 +140,7 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-  return arr.map(elem => elem.toUpperCase());
+  return arr.map((elem) => elem.toUpperCase());
 }
 
 /**
@@ -154,7 +154,7 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  return arr.map(elem => elem.length);
+  return arr.map((elem) => elem.length);
 }
 
 /**
@@ -221,7 +221,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-  return arr.map(elem => [elem.join(',')]).join('\n');
+  return arr.map((elem) => [elem.join(',')]).join('\n');
 }
 
 /**
@@ -236,7 +236,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-  return arr.map(elem => elem * elem);
+  return arr.map((elem) => elem * elem);
 }
 
 /**
@@ -255,7 +255,7 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   let prev = 0;
-  return arr.map(value => {
+  return arr.map((value) => {
     prev += value;
     return prev;
   });
@@ -273,7 +273,7 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  return arr.filter(elem => arr.indexOf(elem) % 2 === 1);
+  return arr.filter((elem) => arr.indexOf(elem) % 2 === 1);
 }
 
 /**
@@ -328,7 +328,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  return arr.filter(elem => typeof elem === 'number' && elem > 0).length;
+  return arr.filter((elem) => typeof elem === 'number' && elem > 0).length;
 }
 
 /**
@@ -355,7 +355,7 @@ function sortDigitNamesByNumericOrder(arr) {
     'six',
     'seven',
     'eight',
-    'nine'
+    'nine',
   ];
   return arr.sort((a, b) => alphabet.indexOf(a) - alphabet.indexOf(b));
 }
@@ -389,7 +389,7 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-  return arr.filter(elem => !elem).length;
+  return arr.filter((elem) => !elem).length;
 }
 
 /**
@@ -407,7 +407,7 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-  return arr.filter(elem => elem === item).length;
+  return arr.filter((elem) => elem === item).length;
 }
 
 /**
@@ -674,5 +674,5 @@ module.exports = {
   group,
   selectMany,
   getElementByIndexes,
-  swapHeadAndTail
+  swapHeadAndTail,
 };

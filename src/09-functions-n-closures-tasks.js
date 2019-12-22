@@ -45,7 +45,7 @@ function getComposition(f, g) {
  *
  */
 function getPowerFunction(exponent) {
-  return number => number ** exponent;
+  return (number) => number ** exponent;
 }
 
 
@@ -199,5 +199,5 @@ module.exports = {
   retry,
   logger,
   partialUsingArguments,
-  getIdGeneratorFunction
+  getIdGeneratorFunction,
 };

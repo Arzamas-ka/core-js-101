@@ -258,7 +258,7 @@ function encodeToRot13(str) {
   const SMALL_LETTERS = 'abcdefghijklmnopqrstuvwxyz';
   let result = '';
 
-  str.split('').forEach(letter => {
+  str.split('').forEach((letter) => {
     if (BIG_LETTERS.includes(letter)) {
       const index = BIG_LETTERS.indexOf(letter);
       const shift = (index + 13) % 26;
@@ -316,7 +316,7 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-const getCardId = value => ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+const getCardId = (value) => ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
   'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
   'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
   'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'].indexOf(value);
@@ -337,5 +337,5 @@ module.exports = {
   getRectangleString,
   encodeToRot13,
   isString,
-  getCardId
+  getCardId,
 };

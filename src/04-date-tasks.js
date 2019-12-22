@@ -127,5 +127,5 @@ module.exports = {
   parseDataFromIso8601,
   isLeapYear,
   timeSpanToString,
-  angleBetweenClockHands
+  angleBetweenClockHands,
 };

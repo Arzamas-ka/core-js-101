@@ -310,7 +310,7 @@ function isCreditCardNumber(ccn) {
 function getDigitalRoot(num) {
   const result = String(num)
     .split('')
-    .map(elem => +elem)
+    .map((elem) => +elem)
     .reduce((acc, val) => acc + val);
   return result > 9 ? getDigitalRoot(result) : result;
 }
@@ -346,7 +346,7 @@ function isBracketsBalanced(str) {
     ']': '[',
     '}': '{',
     ')': '(',
-    '>': '<'
+    '>': '<',
   };
 
   for (let i = 0; i < str.length; i += 1) {
@@ -397,14 +397,14 @@ function toNaryString(/* num, n */) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-  const isFirstCharEmpty = pathes.some(path => path[0] !== '/');
+  const isFirstCharEmpty = pathes.some((path) => path[0] !== '/');
 
   if (isFirstCharEmpty) {
     return '';
   }
 
   const resultPathes = [];
-  const arrPathes = pathes.map(path => path.split('/'));
+  const arrPathes = pathes.map((path) => path.split('/'));
 
   for (let i = 0; i < arrPathes[0].length; i += 1) {
     const subPath = arrPathes[0][i];
@@ -584,5 +584,5 @@ module.exports = {
   toNaryString,
   getCommonDirectoryPath,
   getMatrixProduct,
-  evaluateTicTacToePosition
+  evaluateTicTacToePosition,
 };
